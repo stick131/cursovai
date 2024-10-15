@@ -1,0 +1,20 @@
+{
+  "name": "cursovai",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stick131/cursovai.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stick131/cursovai/issues"
+  },
+  "homepage": "https://github.com/stick131/cursovai#readme"
+}

@@ -91,7 +91,7 @@ a {
     border-radius: 4.8em;
     cursor: pointer;
     font-size: 18px;
-    border: none;
+    border: 1px solid transparent;
     transition: .5s all;
 }
 
@@ -158,7 +158,6 @@ a {
 }
 
 .first-screen-container {
-    width: 50%;
     padding-left: 27px;
 }
 
@@ -177,6 +176,7 @@ a {
     margin-bottom: 20px;
     font-size: 30px;
     color: #fff;
+    margin-bottom: 30px;
 }
 
 .info {
@@ -221,7 +221,6 @@ a {
 
 .description-item {
     max-width: 100%;
-    height: 504px;
     display: flex;
     align-items: center;
     background-color: #F1FDFF;
@@ -381,7 +380,6 @@ a {
 
     .description-btn {
         margin: 0 auto;
-        margin-top: 50vh;
     }
 
     .support-block {
@@ -439,6 +437,7 @@ a {
 
     .description-item img {
         width: 100%;
+        height: 200px;
     }
 
     .footer-send img {
@@ -456,14 +455,12 @@ a {
     }
 
     .description-btn {
-        margin-top: 75vh;
     }
 }
 
-@media(max-width: 500px) {
+@media(max-width: 550px) {
     .popup{
         width: 90%;
-        height: 50%;
     }
 
     .popup__text{
@@ -483,3 +480,4 @@ a {
         font-size: 14px;
     }
 }
+
