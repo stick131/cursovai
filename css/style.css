@@ -365,6 +365,47 @@ a {
     margin-bottom: 25px;
 }
 
+.team {
+    padding: 36px 0 34px;
+    text-align: center;
+}
+
+.team__title {
+    margin-top: 200px;
+    margin-bottom: 79px;
+    text-align: center;
+}
+
+.team__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(294px, auto));
+    grid-template-rows: repeat(2, 1fr);
+    gap: 24px 74px;
+    justify-content: center;
+}
+
+.team__img {
+    margin-bottom: 24px;
+}
+
+.team__text {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.team__name {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+
+.team__descr {
+    margin: 0;
+    font-size: 12px;
+}
+
 @media screen and (max-width: 1200px) {
     .support-block::before {
         display: none;
