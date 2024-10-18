@@ -428,6 +428,14 @@ a {
     }
 }
 
+.maps{
+   padding: 30px 0;
+}
+
+.maps__title{
+    margin-bottom: 40px;
+}
+
 @media(max-width: 1050px) {
     .burger {
         display: flex;
@@ -485,7 +493,6 @@ a {
         width: 100%;
     }
 
-    .title,
     .description-name,
     .menu-list {
         font-size: 22px;
