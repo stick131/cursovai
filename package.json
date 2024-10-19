@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/stick131/cursovai/issues"
   },
-  "homepage": "https://github.com/stick131/cursovai#readme"
+  "homepage": "https://github.com/stick131/cursovai#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
 }
