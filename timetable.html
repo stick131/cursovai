@@ -31,46 +31,88 @@
         </div>
     </header>
 
-    <div class="team">
+    <section class="team">
         <div class="container">
             <h2 class="team__title title">Нашi вчителя</h2>
-                <div class="team__container">
-                    <div class="team__item">
-                        <img class="team__img" src="images/team-1.jpg" alt="team-1">
-                        <h3 class="team__name">Гитарист</h3>
-                    </div>
-                    <div class="team__item">
-                        <img class="team__img" src="images/team-2.jpg" alt="team-1">
-                        <h3 class="team__name">Пiанист</h3>
-                    </div>
-                    <div class="team__item">
-                        <img class="team__img" src="images/team-3.jpg" alt="team-1">
-                        <h3 class="team__name">Скрипаль</h3>
-                    </div>
-                    <div class="team__item">
-                        <img class="team__img" src="images/team-4.jpg" alt="team-1">
-                        <h3 class="team__name">Флейтист</h3>
-                    </div>
-                    <div class="team__item">
-                        <img class="team__img" src="images/team-5.jpg" alt="team-1">
-                        <h3 class="team__name">Гітарист</h3>
-                    </div>
-                    <div class="team__item">
-                        <img class="team__img" src="images/team-6.jpg" alt="team-1">
-                        <h3 class="team__name">Піаніст</h3>
-                    </div>
+            <div class="team__container">
+                <div class="team__item">
+                    <img class="team__img" src="images/team-1.jpg" alt="team-1">
+                    <h3 class="team__name">Гитарист</h3>
+                </div>
+                <div class="team__item">
+                    <img class="team__img" src="images/team-2.jpg" alt="team-1">
+                    <h3 class="team__name">Пiанист</h3>
+                </div>
+                <div class="team__item">
+                    <img class="team__img" src="images/team-3.jpg" alt="team-1">
+                    <h3 class="team__name">Скрипаль</h3>
+                </div>
+                <div class="team__item">
+                    <img class="team__img" src="images/team-4.jpg" alt="team-1">
+                    <h3 class="team__name">Флейтист</h3>
+                </div>
+                <div class="team__item">
+                    <img class="team__img" src="images/team-5.jpg" alt="team-1">
+                    <h3 class="team__name">Гітарист</h3>
+                </div>
+                <div class="team__item">
+                    <img class="team__img" src="images/team-6.jpg" alt="team-1">
+                    <h3 class="team__name">Піаніст</h3>
                 </div>
             </div>
-            </section>
-            <section class="maps">
-                <div class="container">
-                    <div class="maps__title title">Де ми знаходимось?</div>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2538.7048284079315!2d30.48551287403467!3d50.483838571598525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTDCsDI5JzAxLjgiTiAzMMKwMjknMTcuMSJF!5e0!3m2!1sru!2sua!4v1729265730983!5m2!1sru!2sua" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </section>
-
-
-            <script src="js/script.js"></script>
+        </div>
+    </section>
+    <section class="maps">
+        <div class="container">
+            <h2 class="maps__title title">Де ми знаходимось?</h2>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2538.7048284079315!2d30.48551287403467!3d50.483838571598525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTDCsDI5JzAxLjgiTiAzMMKwMjknMTcuMSJF!5e0!3m2!1sru!2sua!4v1729265730983!5m2!1sru!2sua"
+                width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+    <section class="write">
+        <div class="container">
+            <h2 class="write__title title">Напишiть відгук</h2>
+            <form class="footer-form">
+                <input class="footer-input" type="email" placeholder="Пошта">
+                <textarea name="write__input" id="write__input" class="write__input footer-input"
+                    placeholder="Текст"></textarea>
+                <button class="btn blue-button footer-btn write-btn" type="submit">Надіслати відгук</button>
+            </form>
+        </div>
+    </section>
+    <section class="review">
+        <div class="container">
+            <h2 class="review__title title">Відгуки</h2>
+            <div class="review__text">
+                <div class="review__name">Артем</div>
+                <div class="review__descr">Класна школа, навчився грати на гiтарi</div>
+            </div>
+            <div class="review__text">
+                <div class="review__name">Андрiй</div>
+                <div class="review__descr">Дякую, навчився виступати на концертах</div>
+            </div>  
+            <div class="review__text">
+                <div class="review__name">Ганна</div>
+                <div class="review__descr">Чудова школа! Моя дитина із задоволенням відвідує заняття, і ми вже бачимо значні результати. Викладачі уважні, терплячі та знають, як мотивувати учнів. Рекомендую всім, хто бажає розкрити музичний потенціал!</div>
+            </div>  
+        </div>
+    </section>
+    <div class="overlay">
+        <div class="popup">
+            <button class="popup__close">&times;</button>
+            <div class="popup__title">Повiдомлення</div>
+        </div>
+    </section>
+    <div class="overlay">
+        <div class="popup">
+            <button class="popup__close">&times;</button>
+            <div class="popup__title">Повiдомлення</div>
+            <div class="popup__text">Ваш вiдгук вiдправлен</div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
