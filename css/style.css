@@ -446,6 +446,7 @@ a {
     height: 150px;
     border-radius:0;
     padding: 30px;
+    resize: none;
 }
 
 .review{
