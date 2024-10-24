@@ -1,11 +1,31 @@
 const burger = document.querySelector(".burger");
-
+const form = document.querySelector("form");
+let formData = {};
+let reviewData = {}
 
 burger.addEventListener("click", (event)=>{
     burger.classList.toggle("burger--active");
     document.querySelector(".menu-list").classList.toggle("menu-list--active");
 });
 
+form.addEventListener("input", (event)=> {
+    formData[event.target.name] = event.target.value;
+    localStorage.setItem("formData", JSON.stringify(formData));
+})
+
+try{
+    if(localStorage.getItem("formData")){
+        formData = JSON.parse(localStorage.getItem("formData"));
+        for(let key in formData){
+            form.elements[key].value = formData[key];
+        }
+    }
+    if(localStorage.getItem("formData")){
+
+    }
+}catch(TypeError){
+    formData.text = "";
+}
 
 
 document.querySelector(".footer-btn").addEventListener("click", (event) => {
@@ -31,6 +51,7 @@ document.querySelector(".footer-btn").addEventListener("click", (event) => {
         text: document.querySelector("#text").value 
     };
     NewMessage = review(person, message);
+
     let reviews = document.querySelector(".review .container .review__content");
     if(message.status){
         reviews.innerHTML =  `<div class="review__text">
