@@ -10,16 +10,22 @@ describe("Перевiрка форми для вiдгукiв", () => {
         };
         message = {
             title: "Повiдомлення",
-            text: `Ваш вiдгук вiдправлен`
+            text: `Ваш вiдгук вiдправлен`,
+            status: false
         };
     });
+    test('Якщо усi даннi введденi вiрно', () => {
+        person.name = "Егор";
+        person.text = "Дуже класна школа, усiм рекомендую";
+       expect(review(person, message)).toEqual({title: "Повiдомлення",text: "Ваш вiдгук вiдправлен", status: true})
+    });
     test('Якщо форма пуста', () => {
-       expect(review(person, message)).toEqual({title: "Повiдомлення",text: "Ви не заповнили усi даннi, спробуйте ще раз"})
+       expect(review(person, message)).toEqual({title: "Повiдомлення",text: "Ви не заповнили усi даннi, спробуйте ще раз", status: false})
     });
     test('Якщо у полi name бiльше 20 cимволiв', () => {
        person.name = "sadddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd";
        person.text = "Класна школа"
-       expect(review(person, message)).toEqual({title: "Повiдомлення",text: "Ваше ім'я занадто довге, воно має бути менше 20 символів"})
+       expect(review(person, message)).toEqual({title: "Повiдомлення",text: "Ваше ім'я занадто довге, воно має бути менше 20 символів", status: false})
     });
     test('Якщо у полi text бiльше 400 cимволiв', () => {
         person.name = "Egor";
@@ -33,6 +39,6 @@ Odio, vitae. Similique illo pariatur eligendi ipsa? Porro autem, non adipisci ne
 Architecto quibusdam fugit nihil sint quo consequuntur sapiente quidem vel aperiam, voluptate ad aut, suscipit labore quod? Cum consequuntur, cupiditate provident beatae doloribus nostrum ipsum nobis vitae adipisci. Culpa, unde.
 Debitis, illum placeat aliquam accusantium, vitae, laboriosam quaerat cupiditate corrupti fugit enim doloribus blanditiis sequi ipsum inventore autem consectetur consequuntur. Nihil vel eligendi a harum blanditiis praesentium nesciunt officiis debitis.
 Aut, consequuntur iure? Quod, consectetur? Est assumenda explicabo sunt cupiditate dolore animi amet, quae ab magnam nihil porro impedit saepe nostrum vero fuga hic quidem omnis perferendis? Maiores, quo debitis.`
-       expect(review(person, message)).toEqual({title: "Повiдомлення",text: "Ваше вiдгук занадто довгий, вiн має бути менше 400 символів"})
+       expect(review(person, message)).toEqual({title: "Повiдомлення",text: "Ваше вiдгук занадто довгий, вiн має бути менше 400 символів", status: false})
     });
 });

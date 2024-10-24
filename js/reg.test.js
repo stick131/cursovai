@@ -22,7 +22,7 @@ describe(
         test("Якщо формi не праильний введен email", () => {
             person.name = "Егор"
             person.email = "asdasd@adnj.com"
-            expect(reg(person, message)).toEqual({title: 'Антиспам захист', text: 'Будь ласка не використовуйте 10 хвилиннi пошти!'})
+            expect(reg(person, message)).toEqual({title: 'Антиспам захист', text: "Ви ввели некоректну пошту"})
         });
         test("Якщо усi даннi введенi правильно, використовуэ почту gmail", () => {
             person.name =  "Егор"

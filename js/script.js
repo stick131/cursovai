@@ -50,4 +50,3 @@ document.querySelector(".popup__close").addEventListener("click", (event) =>{
     document.querySelector(".overlay").classList.remove("overlay--active");
 });
 
-// document.querySelector(".write__btn").addEventListener("submit")
