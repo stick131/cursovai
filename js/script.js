@@ -1,4 +1,5 @@
 const burger = document.querySelector(".burger");
+let reviews = document.querySelector(".review .container .review__content");
 const form = document.querySelector("form");
 let formData = {};
 let reviewData = {}
@@ -20,8 +21,14 @@ try{
             form.elements[key].value = formData[key];
         }
     }
-    if(localStorage.getItem("formData")){
-
+    if(localStorage.getItem("reviewData")){
+        let people = JSON.parse(localStorage.getItem("reviewData"));
+        for(let key in people){
+            reviews.innerHTML = `<div class="review__text">
+                <div class="review__name">${key}</div>
+                <div class="review__descr">${people[key]}</div>
+            </div>` + reviews.innerHTML;
+        }
     }
 }catch(TypeError){
     formData.text = "";
@@ -36,30 +43,36 @@ document.querySelector(".footer-btn").addEventListener("click", (event) => {
         text: `Дякуємо за реєстрацію та вітаємо вас у нашій музичній школі! Ми раді, що ви обрали шлях творчості та музичного розвитку разом із нами. У нашій школі ви зможете поринути у захоплюючий світ музики, розвивати свої таланти та відкривати нові горизонти.`,
         status: true
     }
-    if(!event.target.classList.contains("write-btn")){
-    person = {
-        name: document.querySelector("#name").value,
-        email: document.querySelector("#email").value 
-    };
 
-    NewMessage = reg(person, message);
+    if (!event.target.classList.contains("write-btn")) {
+        person = {
+            name: document.querySelector("#name").value,
+            email: document.querySelector("#email").value 
+        };
 
-    }else{
-    message.text = "Ваш вiдгук вiдправлен";
-    person = {
-        name: document.querySelector("#name").value,
-        text: document.querySelector("#text").value 
-    };
-    NewMessage = review(person, message);
+        NewMessage = reg(person, message);
+    } else {
+        message.text = "Ваш вiдгук вiдправлен";
+        person = {
+            name: document.querySelector("#name").value,
+            text: document.querySelector("#text").value 
+        };
+        NewMessage = review(person, message);
+        
+        let reviews = document.querySelector(".review .container .review__content");
+        if (message.status) {
+            let reviewData = JSON.parse(localStorage.getItem("reviewData")) || {};
+            reviewData[person.name] = person.text;
 
-    let reviews = document.querySelector(".review .container .review__content");
-    if(message.status){
-        reviews.innerHTML =  `<div class="review__text">
+            localStorage.setItem("reviewData", JSON.stringify(reviewData));
+
+            reviews.innerHTML = `<div class="review__text">
                 <div class="review__name">${person.name}</div>
                 <div class="review__descr">${person.text}</div>
             </div>` + reviews.innerHTML;
+        }
     }
-    }
+
     document.querySelector(".popup__title").textContent = NewMessage.title;
     document.querySelector(".popup__text").textContent = NewMessage.text;
     document.querySelector(".overlay").classList.add("overlay--active");
