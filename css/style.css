@@ -554,8 +554,6 @@ a {
         justify-content: flex-end;
     }
 
-    .description-btn {
-    }
 }
 
 @media(max-width: 550px) {
