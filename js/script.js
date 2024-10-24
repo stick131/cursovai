@@ -7,13 +7,14 @@ burger.addEventListener("click", (event)=>{
 });
 
 
+
 document.querySelector(".footer-btn").addEventListener("click", (event) => {
     event.preventDefault();
-    let person;
+    let person, NewMessage;
     let message = {
-        title: document.querySelector(".popup__title").textContent,
-        text: document.querySelector(".popup__text").textContent,
-        color: "green"
+        title: "Повiдомлення",
+        text: `Дякуємо за реєстрацію та вітаємо вас у нашій музичній школі! Ми раді, що ви обрали шлях творчості та музичного розвитку разом із нами. У нашій школі ви зможете поринути у захоплюючий світ музики, розвивати свої таланти та відкривати нові горизонти.`,
+        status: true
     }
     if(!event.target.classList.contains("write-btn")){
     person = {
@@ -21,22 +22,25 @@ document.querySelector(".footer-btn").addEventListener("click", (event) => {
         email: document.querySelector("#email").value 
     };
 
-    message = reg(person, message);
+    NewMessage = reg(person, message);
 
-    document.querySelector(".popup__title").textContent = message.title;
-    document.querySelector(".popup__text").textContent = message.text;
     }else{
+    message.text = "Ваш вiдгук вiдправлен";
     person = {
         name: document.querySelector("#name").value,
         text: document.querySelector("#text").value 
     };
+    NewMessage = review(person, message);
     let reviews = document.querySelector(".review .container .review__content");
-    reviews.innerHTML =  `<div class="review__text">
+    if(message.status){
+        reviews.innerHTML =  `<div class="review__text">
                 <div class="review__name">${person.name}</div>
                 <div class="review__descr">${person.text}</div>
             </div>` + reviews.innerHTML;
-            
     }
+    }
+    document.querySelector(".popup__title").textContent = NewMessage.title;
+    document.querySelector(".popup__text").textContent = NewMessage.text;
     document.querySelector(".overlay").classList.add("overlay--active");
 });
 

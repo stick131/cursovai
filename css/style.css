@@ -367,13 +367,31 @@ a {
     margin-bottom: 25px;
 }
 
+.about{
+    margin-top: 200px;
+
+}
+
+.about__title{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.about__descr{
+    margin-bottom: 20px;
+}
+
+.about__descr:last-child{
+    margin-bottom: 0;
+}
+
 .team {
     padding: 36px 0 34px;
     text-align: center;
 }
 
 .team__title {
-    margin-top: 200px;
+    margin-top: 40px;
     margin-bottom: 79px;
     text-align: center;
 }
@@ -406,28 +424,6 @@ a {
 .team__descr {
     margin: 0;
     font-size: 12px;
-}
-
-@media screen and (max-width: 1200px) {
-    .support-block::before {
-        display: none;
-    }
-
-    .support {
-        padding: 40px 0;
-    }
-
-    .description {
-        padding: 30px 0 30px;
-    }
-
-    .description-btn {
-        margin: 0 auto;
-    }
-
-    .support-block {
-        margin-bottom: 20px;
-    }
 }
 
 .maps{
@@ -468,6 +464,29 @@ a {
 .review__name{
     margin-bottom: 15px;
 }
+@media screen and (max-width: 1200px) {
+    .support-block::before {
+        display: none;
+    }
+
+    .support {
+        padding: 40px 0;
+    }
+
+    .description {
+        padding: 30px 0 30px;
+    }
+
+    .description-btn {
+        margin: 0 auto;
+    }
+
+    .support-block {
+        margin-bottom: 20px;
+    }
+}
+
+
 
 @media(max-width: 1050px) {
     .burger {
