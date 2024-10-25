@@ -1,5 +1,4 @@
 const burger = document.querySelector(".burger");
-let reviews = document.querySelector(".review .container .review__content");
 const form = document.querySelector("form");
 let formData = {};
 let reviewData = {}
@@ -13,7 +12,8 @@ form.addEventListener("input", (event)=> {
     formData[event.target.name] = event.target.value;
     localStorage.setItem("formData", JSON.stringify(formData));
 })
-
+console.log(document.title)
+let reviews = document.querySelector(".review .container .review__content");
 try{
     if(localStorage.getItem("formData")){
         formData = JSON.parse(localStorage.getItem("formData"));
@@ -25,7 +25,7 @@ try{
 }catch(TypeError){
     formData.text = "";
 }finally{
-   if(localStorage.getItem("reviewData")){
+   if(localStorage.getItem("reviewData") && document.title == "Про нас"){
         let people = JSON.parse(localStorage.getItem("reviewData"));
         for(let key in people){
             reviews.innerHTML = `<div class="review__text">
