@@ -21,7 +21,11 @@ try{
             form.elements[key].value = formData[key];
         }
     }
-    if(localStorage.getItem("reviewData")){
+ 
+}catch(TypeError){
+    formData.text = "";
+}finally{
+   if(localStorage.getItem("reviewData")){
         let people = JSON.parse(localStorage.getItem("reviewData"));
         for(let key in people){
             reviews.innerHTML = `<div class="review__text">
@@ -30,8 +34,6 @@ try{
             </div>` + reviews.innerHTML;
         }
     }
-}catch(TypeError){
-    formData.text = "";
 }
 
 
