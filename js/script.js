@@ -1,12 +1,6 @@
-const burger = document.querySelector(".burger");
 const form = document.querySelector("form");
 let formData = {};
 let reviewData = {}
-
-burger.addEventListener("click", (event)=>{
-    burger.classList.toggle("burger--active");
-    document.querySelector(".menu-list").classList.toggle("menu-list--active");
-});
 
 form.addEventListener("input", (event)=> {
     formData[event.target.name] = event.target.value;
@@ -25,7 +19,7 @@ try{
 }catch(TypeError){
     formData.text = "";
 }finally{
-   if(localStorage.getItem("reviewData") && document.title == "Про нас"){
+   if(localStorage.getItem("reviewData") && document.title == "Про нас" && document.title  == "Галерея"){
         let people = JSON.parse(localStorage.getItem("reviewData"));
         for(let key in people){
             reviews.innerHTML = `<div class="review__text">
