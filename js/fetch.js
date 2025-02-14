@@ -9,7 +9,7 @@ async function fetchImage(search) {
   const data = await response.json();
 
 
-  for (let i = 0; i < data.results.length; i++) {
+  for (let i = 0; i < 1; i++) {
     images.innerHTML += `<img class="gallery__image" src="${data.results[i].links.download}">` 
   }
 }
